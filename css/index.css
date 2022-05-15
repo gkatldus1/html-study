@@ -1,0 +1,53 @@
+@import url(style.css);
+
+.header-cafe-bg-box {
+  background-image: url("../images/cafe.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.header {
+  height: 50px;
+  /* vh, vw, vmin, vmax */
+}
+
+.cafe {
+  height: 480px;
+  background-color: #00ffff99;
+}
+
+.rland {
+  height: 530px;
+  background-color: bisque;
+}
+
+.spot {
+  height: 350px;
+  /* background: url("../images/sea.jpg"); */
+  background: url("../images/sea2.jpg") no-repeat center/cover;
+  /* background-image:url("../images/sea2.jpg") */
+  /* background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; */
+}
+
+.blog {
+  height: 320px;
+  background-color: aquamarine;
+}
+
+.location {
+  height: 430px;
+  background-color: blueviolet;
+}
+
+.business-hour {
+  height: 240px;
+  background-color: blanchedalmond;
+}
+
+.footer {
+  height: 150px;
+  background-color: aliceblue;
+}
