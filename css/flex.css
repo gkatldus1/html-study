@@ -1,0 +1,24 @@
+.flex-box {
+  background-color: gray;
+
+  display: flex;
+  flex-direction: row;
+  /* flex-wrap: wrap; */
+}
+
+.item {
+  color: white;
+  background-color: red;
+  /* flex-grow: 1; */
+  flex-basis: 100px;
+  flex-shrink: 0;
+}
+
+.item:first-child {
+  /* flex-grow: 1; */
+  /* min-width: 100px; */
+}
+
+.item:nth-child(2n) {
+  background-color: blue;
+}

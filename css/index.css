@@ -1,4 +1,22 @@
 @import url(style.css);
+/* 시스템 폰트를 웹폰트로 바꿔 사용 
+@font-face{
+    font-family: "newlec";
+    src:url("../font/aa.woff2");
+} */
+
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap");
+
+.img-btn-menu {
+  background-image: url("../images/menu.svg");
+  background-repeat: no-repeat;
+  background-position: left top;
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  overflow: hidden;
+  text-indent: -999px;
+}
 
 .header-cafe-bg-box {
   background-image: url("../images/cafe.jpg");
@@ -8,18 +26,55 @@
 }
 
 .header {
+  width: 100%;
   height: 50px;
   /* vh, vw, vmin, vmax */
+  background-color: #0002;
+  /* layout */
+  position: sticky;
+  top: 0px;
 }
 
 .cafe {
   height: 480px;
-  background-color: #00ffff99;
+  /* background-color: #00ffff99; */
+  /* background: linear-gradient(#e66465, #9198e5);
+ */
+  position: relative;
+}
+.cafe-title {
+  position: absolute;
+  left: -14px;
+  top: 23px;
+}
+
+.rland-location {
+  position: absolute;
+  /* position: fixed; */
+  /* position: relative; */
+  /* position: sticky; */
+
+  left: 0px;
+  /* left: 0px; */
+  bottom: 0px;
 }
 
 .rland {
   height: 530px;
-  background-color: bisque;
+  background: url("../images/19.jpg") no-repeat left top/cover;
+  overflow: auto;
+  color: white;
+  background-attachment: fixed;
+
+  /* background-image: radial-gradient(
+    ellipse closest-side at 100px 100px,
+    red 33%,
+    green 33% 66%,
+    blue 66% 100%
+  ); */
+
+  /* background-image: linear-gradient(45deg, red 20%, green 70%, blue 100%); */
+  /* background-image: linear-gradient(45deg, red 20%, green 20% 70%, blue 70% 100%); */
 }
 
 .spot {
@@ -34,7 +89,7 @@
 
 .blog {
   height: 320px;
-  background-color: aquamarine;
+  /* background-color: aquamarine; */
 }
 
 .location {
@@ -50,4 +105,119 @@
 .footer {
   height: 150px;
   background-color: aliceblue;
+}
+/* ======content block=================================== */
+.header-title {
+  font-family: "Segoe UI", "굴림", "돋움", sans-serif;
+  font-weight: normal;
+  font-size: 50px;
+  color: #fff;
+  font-style: oblique 80deg;
+  font-stretch: expanded;
+}
+.cafe-title {
+  font-family: "Nanum Brush Script", cursive;
+  font-size: 26px;
+  font-weight: normal;
+  color: white;
+  text-align: center;
+  line-height: 45px;
+  /* 콘텐츠 박스 스타일 */
+  background-color: rgba(0, 0, 0, 0.29);
+  width: 248px;
+  height: 45px;
+  border-radius: 20px;
+}
+
+.top-menu {
+  padding: 31px 0;
+  background-color: #fff6;
+}
+
+.top-menu > ul {
+  width: 1000px;
+  margin: 0;
+  padding: 0;
+  /* border: 1px solid blue; */
+
+  overflow: hidden;
+}
+
+.top-menu li {
+  float: left;
+  list-style-type: none;
+  width: 100px;
+  height: 100px;
+  /* border: 1px solid red; */
+
+  margin-left: 20px;
+}
+
+.top-menu li:first-child {
+  margin-left: 24px;
+}
+
+.top-menu li > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.top-menu li > a {
+  width: 100%;
+  height: 100%;
+  border: 1px solid green;
+  text-align: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #0006;
+  color: #fff;
+}
+
+.top-menu li:hover > a {
+  position: relative;
+  top: -100%;
+}
+
+/* ======================btn content================== */
+
+.btn-cafe-menu-all {
+  /* text style */
+  font-family: "Segoe UI", sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  line-height: 30px;
+
+  /* content box style */
+  display: inline-block;
+  /* width: 100px;
+  height: 30px; */
+  padding: 3px 14px;
+  border-radius: 10px 0%;
+  background-color: #d68814;
+  text-decoration: none;
+}
+
+.btn-rland-location {
+  font-family: "Segoe UI", sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+  line-height: 40px;
+
+  display: inline-block;
+  background-color: rgba(110, 152, 9, 0.65);
+  box-sizing: border-box;
+  width: 173px;
+  height: 40px;
+  padding-left: 50px;
+
+  background-image: url("../images/location.png");
+  background-repeat: no-repeat;
+  background-position: left 15px center;
 }

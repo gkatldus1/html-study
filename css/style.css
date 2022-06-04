@@ -1,3 +1,19 @@
-body {
+/* ==============reset==================== */
+body,
+h1 {
   margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* ============utils=================== */
+/* -----------display--------- */
+.d-none {
+  display: none;
+}
+
+.d-inline-block {
+  display: inline-block;
 }
