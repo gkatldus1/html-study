@@ -1,0 +1,37 @@
+.test-box {
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+}
+
+.header {
+  background-color: lightgreen;
+  flex-basis: 50px;
+}
+
+.body {
+  background-color: antiquewhite;
+  flex-basis: 300px;
+  flex-grow: 1;
+  display: flex;
+}
+.aside {
+  /* min-width: 250px; */
+
+  width: 250px;
+  flex-shrink: 0;
+  flex-grow: 0;
+
+  background-color: lightblue;
+}
+
+.main {
+  flex-grow: 1;
+  background-color: lightgoldenrodyellow;
+  order: -1;
+}
+
+.footer {
+  background-color: lightgray;
+  flex-basis: 50px;
+}
