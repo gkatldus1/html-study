@@ -81,11 +81,67 @@
 
       //   f1();
 
-      function f1() {
-        a = 1;
+      //   function f1() {
+      //     a = 1;
+      //   }
+      //   f1();
+      //   alert(a);
+
+      // var funcs = [];
+
+      // funcs[0] = function () {
+      //   console.log(0);
+      // };
+
+      // funcs[1] = function () {
+      //   console.log(1);
+      // };
+
+      // funcs[2] = function () {
+      //   console.log(2);
+      // };
+
+      // funcs[0]();
+      // funcs[1]();
+      // funcs[2]();
+
+      var funcs = [];
+      function getList() {
+        for (var i = 0; i < 3; i++) {
+          funcs[i] = (function (x) {
+            return function () {
+              console.log(x);
+            };
+          })(i);
+        }
       }
-      f1();
-      alert(a);
+      getList();
+      funcs[0]();
+      funcs[1]();
+      funcs[2]();
+
+      (function (x, y) {
+        return x + y;
+      })(3, 4);
+
+      // var nums = [4, 7, 3, 1, 6, 3, 2, 11, 9];
+      // console.log(nums);
+      // nums.sort(function (a, b) {
+      //   return a - b; //오름차순
+      // });
+      // console.log(nums);
+
+      var nums = [
+        { kor: 68, eng: 30 },
+        { kor: 25, eng: 34 },
+        { kor: 30, eng: 70 },
+      ];
+      nums.sort(function (a, b) {
+        return a.kor - b.kor;
+      });
+      console.log(nums);
+
+      // for (var i in funcs) funcs[i]();
     </script>
   </head>
   <body></body>
