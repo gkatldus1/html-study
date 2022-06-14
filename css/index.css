@@ -5,8 +5,6 @@
     src:url("../font/aa.woff2");
 } */
 
-@import url("https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap");
-
 .img-btn-menu {
   background-image: url("../images/menu.svg");
   background-repeat: no-repeat;
@@ -76,6 +74,7 @@
 }
 
 .rland {
+  margin-top: 30px;
   height: 530px;
   /* background: url("../images/19.jpg") no-repeat left top/cover;
   overflow: auto;
@@ -237,31 +236,77 @@
 } */
 
 .rland > article {
+  cursor: pointer;
+
   display: grid;
-  grid-template-columns: 100px 1fr;
-  grid-template-rows: 35px 65px;
+  /* grid-template-columns: 100px 1fr;
+  grid-template-rows: 35px 65px; */
   column-gap: 20px;
   margin-left: 20px;
-  background-color: gray;
-  grid-template-areas:
-    "img header"
-    "img paragraph";
+
+  grid-template:
+    "img header" 35px
+    "img paragraph" 65px
+    /100px 1fr;
+
+  padding: 10px 24px;
+  transition: 500ms;
+}
+
+.rland > article:hover {
+  background-color: yellowgreen;
+}
+
+.rland > article:nth-child(2n + 1) {
+  display: grid;
+  /* grid-template-columns: 100px 1fr;
+  grid-template-rows: 35px 65px; */
+  column-gap: 20px;
+  margin-left: 20px;
+
+  grid-template:
+    "header img" 35px
+    "paragraph img" 65px
+    /1fr 100px;
 }
 
 .rland > article > :nth-child(1) {
+  /* text */
+  font-family: "Nanum Pen Script", cursive;
+  font-weight: normal;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  /* layout */
   grid-area: header;
+  align-self: center;
 }
 
 .rland > article > div:nth-child(2) {
   grid-area: img;
 }
 .rland > article > div:nth-child(2) img {
+  /* layout */
+  border-radius: 20px 0 0 20px;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: 500ms;
+}
+.rland > article:nth-child(2n + 1) > div > img {
+  border-radius: 0 20px 20px 0;
+}
+
+.rland > article:hover > div > img {
+  border-radius: 0;
 }
 
 .rland > article > :nth-child(3) {
+  /* text */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 12px;
+
   grid-area: paragraph;
 }
 
