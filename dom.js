@@ -99,9 +99,15 @@
 
 /* <h1>노드 선택방법</h1>--------------------------- */
 window.addEventListener("load", function () {
-  var section = document.getElementById("s1");
-  var input = section.getElementsByClassName("input")[0];
-  var button = section.getElementsByClassName("button")[0];
+  //   var section = document.getElementById("s1");
+  //   var input = section.getElementsByClassName("input")[0];
+  //   var button = section.getElementsByClassName("button")[0];
+
+  var section = document.querySelector("#s1");
+  //   var input = section.querySelector(".input");
+  var input = section.querySelector("input[type=text]");
+
+  var button = section.querySelector(".button");
 
   button.onclick = function () {
     input.value = "안녕하세요";
