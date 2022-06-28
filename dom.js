@@ -104,15 +104,29 @@ window.addEventListener("load", function () {
   var section = document.querySelector("#s5");
   var btnPrev = section.querySelector(".btn-prev");
   var btnNext = section.querySelector(".btn-next");
-
+  var lis = section.querySelectorAll("li");
+  var offIndex = 0;
   btnPrev.onclick = function (e) {
     e.preventDefault();
-    console.log("click!");
   };
 
   btnNext.onclick = function (e) {
     e.preventDefault();
-    console.log("click!");
+    offIndex++;
+
+    var size = lis.length;
+
+    lis[(0 + offIndex) % size].style.left = "0px";
+    lis[(0 + offIndex) % size].style.width = "100px";
+    lis[(0 + offIndex) % size].style.height = "150px";
+
+    lis[(1 + offIndex) % size].style.left = "calc(50% - 60px)";
+    lis[(1 + offIndex) % size].style.width = "120px";
+    lis[(1 + offIndex) % size].style.height = "180px";
+
+    lis[(2 + offIndex) % size].style.left = "calc(100% - 100px)";
+    lis[(2 + offIndex) % size].style.width = "100px";
+    lis[(2 + offIndex) % size].style.height = "150px";
   };
 });
 

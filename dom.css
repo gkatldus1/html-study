@@ -44,7 +44,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
+  /* effect */
   transition: 500ms;
 }
 
@@ -52,15 +52,12 @@
   left: 0px;
 }
 #s5 .box li:nth-child(2) {
-  left: calc(50% - 50px);
+  left: calc(50% - 60px);
+  width: 120px;
+  height: 180px;
 }
 #s5 .box li:nth-child(3) {
   left: calc(100% - 100px);
-}
-
-#s5 .box li:hover {
-  width: 120px;
-  transform: translateZ(-100%);
 }
 
 #s5 .btn-list {
