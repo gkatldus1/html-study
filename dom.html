@@ -5,10 +5,112 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-
+    <link rel="stylesheet" href="dom.css">
     <script src="dom.js"></script>
   </head>
-  <body>
+  <body> 
+
+    <section id="s5">
+      <h1>5. 스타일 다루기(className) : 아이템 이동</h1>
+      <div class="box">
+          <ul>
+              <li class="card-1th">1</li>
+              <li class="card-2th">2</li>
+              <li class="card-3th">3</li>
+          </ul>
+          <div class="btn-list">
+              <a class="btn-prev" href="">이전</a>
+              <a class="btn-next" href="">다음</a>
+          </div>
+      </div>
+  </section>
+  <hr>
+
+    <section id="s4">
+      <h1>4. 스타일 다루기 : 값 입력과 동적으로 박스 스타일 변경</h1>
+      <div class="box">
+          <div class="tool-box">
+              <div>
+                  <label for="">style : solid</label>
+                  <select class="style-input">
+                      <option value="solid">solid</option>
+                      <option value="dashed">dashed</option>
+                      <option value="dotted">dotted</option>
+                  </select>
+              </div>
+              <div>
+                  <label for="">width : 1px</label>
+                  <input class="width-input" type="range" min="0" max="100" value="1" >
+              </div>
+              <div>
+                  <label for="">radius : 0px</label>
+                  <input class="radius-input" type="range" min="0" max="100" value="1" >
+              </div>
+              <div>
+                  <label for="">color : #000000</label>
+                  <input class="color-input" type="color" value="#000000" >
+              </div>
+              <div>
+                  <div>output:</div>
+                  <div class="output"></div>
+              </div>
+          </div>            
+          <div class="preview-box">
+              <div class="item"></div>
+          </div>
+      </div>
+  </section>
+  <hr>
+
+    <section id="s3">
+      <h1>3. <a href="https://www.newlecture.com">&lt;이벤트&gt;&rarr;</a> 객체 : 개선된 계산기</h1>
+      <form>
+          <div class="box">
+              <input type="text" value="0" dir="rtl">
+
+              <input type="button" value="%">
+              <input type="button" value="CE">
+              <input type="button" value="C">
+              <input type="button" value="/">
+
+              <input type="submit" value="7">
+              <input type="submit" value="8">
+              <input type="button" value="9">            
+              <input type="button" value="x">
+              
+              <input class="num" type="button" value="4">
+              <input class="num" type="button" value="5">
+              <input type="button" value="6">
+              <input type="button" value="-">
+               
+              <input class="num" type="button" value="&quot;1&quot;" >
+              <input class="num" type="button" value="2" >
+              <input class="num" type="button" value="3">
+             
+              
+
+              <input type="button" value="+">
+              
+              <input type="button" value="/">
+              <input type="button" value="=">
+          </div>
+      </form>
+  </section>
+  <hr>
+
+    <section id="s2">
+      <h1>2. DOM 속성 다루기: 계산기</h1>
+      <div>
+        <input class="x-input" type="text" value="0">
+        <input class="y-input" type="text" value="0">
+        <input class="button" type="button" value="덧셈">
+        <span>계산 결과 : <span>0</span></span>
+      </div>
+    </section>
+
+
+<hr>
+
 
     <section id="s1">
       <h1>노드 선택방법</h1>

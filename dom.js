@@ -97,6 +97,116 @@
 // funcs[1]();
 // funcs[2]();
 
+{
+  /* <h1>5. 아이템 이동</h1> */
+}
+window.addEventListener("load", function () {
+  var section = document.querySelector("#s5");
+  var btnPrev = section.querySelector(".btn-prev");
+  var btnNext = section.querySelector(".btn-next");
+
+  btnPrev.onclick = function (e) {
+    e.preventDefault();
+    console.log("click!");
+  };
+
+  btnNext.onclick = function (e) {
+    e.preventDefault();
+    console.log("click!");
+  };
+});
+
+{
+  /* <h1>4. 값 입력과 동적으로 박스 스타일 변경</h1> */
+}
+window.addEventListener("load", function () {
+  var section = document.querySelector("#s4");
+  var styleInput = section.querySelector(".style-input");
+  var widthInput = section.querySelector(".width-input");
+  var item = section.querySelector(".item");
+  var radiusInput = section.querySelector(".radius-input");
+  var colorInput = section.querySelector(".color-input");
+  var outputDiv = section.querySelector(".output");
+  // styleInput.onchange;
+  //styleInput.oninput;
+  //styleInput.onmousedown;
+
+  styleInput.oninput = function (e) {
+    item.style.borderStyle = styleInput.value;
+    outputDiv.innerText = item.style.cssText;
+  };
+
+  widthInput.oninput = function (e) {
+    item.style.borderWidth = widthInput.value + "px";
+    outputDiv.innerText = item.style.cssText;
+  };
+
+  radiusInput.oninput = function (e) {
+    item.style.borderRadius = radiusInput.value + "px";
+    outputDiv.innerText = item.style.cssText;
+  };
+
+  colorInput.oninput = function (e) {
+    item.style.borderColor = colorInput.value;
+    outputDiv.innerText = item.style.cssText;
+  };
+});
+
+{
+  /* <h1>3. 이벤트 객체: 개선된 계산기</h1> */
+}
+window.addEventListener("load", function () {
+  var section = document.querySelector("#s3");
+  var txtInput = section.querySelector("input[type=text]");
+  // var btnInputs = section.querySelectorAll(".num");
+  var box = section.querySelector("div");
+  var divInput = box.querySelector("input[value='/']");
+
+  divInput.onclick = function (e) {
+    e.stopPropagation();
+
+    console.log("나눗셈 연산");
+  };
+
+  box.onclick = function (e) {
+    e.preventDefault();
+
+    if (txtInput.value == "0") txtInput.value = "";
+    if (e.target.nodeName != "INPUT") return;
+
+    txtInput.value += e.target.value;
+  };
+
+  // for (var i = 0; i < btnInputs.length; i++) {
+  //   btnInputs[i].onclick = (function (x) {
+  //     return function () {
+  //       txtInput.value = txtInput.value + btnInputs[x].value;
+  //     };
+  //   })(i);
+  // }
+  // var btnClickHandler = function (e) {
+  //   txtInput.value += e.target.value;
+  // };
+  // for (var i = 0; i < btnInputs.length; i++)
+  //   btnInputs[i].onclick = btnClickHandler;
+});
+
+/* <h1>2. DOM 속성 다루기: 계산기</h1>------------------------- */
+window.addEventListener("load", function () {
+  var section = document.querySelector("#s2");
+  var xInput = section.querySelector(".x-input");
+  var yInput = section.querySelector(".y-input");
+  var button = section.querySelector(".button");
+  var resultSpan = section.querySelector("div>span>span");
+
+  button.onclick = function () {
+    var x = parseInt(xInput.value);
+    var y = parseInt(yInput.value);
+    console.log(x + y);
+    resultSpan.innerHTML = x + y;
+  };
+});
+
 /* <h1>노드 선택방법</h1>--------------------------- */
 window.addEventListener("load", function () {
   //   var section = document.getElementById("s1");
