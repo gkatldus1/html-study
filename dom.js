@@ -98,6 +98,33 @@
 // funcs[2]();
 
 {
+  /* <h1>6. 스타일 다루기(classList) : 아코디언 만들기</h1> */
+}
+window.addEventListener("load", function () {
+  var section = document.querySelector("#s6");
+  var box = section.querySelector(".box");
+  var current = section.querySelector(".active");
+
+  box.onclick = function (e) {
+    e.preventDefault();
+
+    // if (e.target.nodeName == "H2") console.log("click!");
+    // if(!e.target.classList.contains("accordion-header")) return;
+
+    var valid =
+      e.target.nodeName == "H2" ||
+      e.target.classList.contains("accordion-header");
+
+    if (!valid) return;
+    if (current != null) current.classList.remove("active");
+
+    e.target.classList.add("active");
+    current = e.target;
+  };
+});
+
+// ------------------------------------------------------------------------
+{
   /* <h1>5. 아이템 이동</h1> */
 }
 window.addEventListener("load", function () {
@@ -105,29 +132,66 @@ window.addEventListener("load", function () {
   var btnPrev = section.querySelector(".btn-prev");
   var btnNext = section.querySelector(".btn-next");
   var lis = section.querySelectorAll("li");
+  var box = section.querySelector(".box");
   var offIndex = 0;
-  btnPrev.onclick = function (e) {
+  var arr = [0, 1, 2];
+  var temp;
+
+  var prev = function (e) {
     e.preventDefault();
+    temp = arr.pop();
+    arr.unshift(temp);
+    lis[arr[0]].className = "card-1th";
+    lis[arr[1]].className = "card-2th";
+    lis[arr[2]].className = "card-3th";
+  };
+  btnPrev.onclick = prev;
+
+  var next = function (e) {
+    e.preventDefault();
+    temp = arr.shift();
+    arr.push(temp);
+    lis[arr[0]].className = "card-1th";
+    lis[arr[1]].className = "card-2th";
+    lis[arr[2]].className = "card-3th";
+  };
+  btnNext.onclick = next;
+
+  box.onclick = function (e) {
+    if (e.target.className == "card-1th") {
+      temp = arr.pop();
+      arr.unshift(temp);
+      lis[arr[0]].className = "card-1th";
+      lis[arr[1]].className = "card-2th";
+      lis[arr[2]].className = "card-3th";
+    } else if (e.target.className == "card-3th") {
+      temp = arr.shift();
+      arr.push(temp);
+      lis[arr[0]].className = "card-1th";
+      lis[arr[1]].className = "card-2th";
+      lis[arr[2]].className = "card-3th";
+    }
   };
 
-  btnNext.onclick = function (e) {
-    e.preventDefault();
-    offIndex++;
+  // btnNext.onclick = function (e) {
+  //   e.preventDefault();
 
-    var size = lis.length;
+  // var size = lis.length;
+  // lis[(0 + offIndex) % size].className = "card-1th";
+  // lis[(0 + offIndex) % size].style.left = "0px";
+  // lis[(0 + offIndex) % size].style.width = "100px";
+  // lis[(0 + offIndex) % size].style.height = "150px";
 
-    lis[(0 + offIndex) % size].style.left = "0px";
-    lis[(0 + offIndex) % size].style.width = "100px";
-    lis[(0 + offIndex) % size].style.height = "150px";
+  // lis[(1 + offIndex) % size].className = "card-2th";
+  // lis[(1 + offIndex) % size].style.left = "calc(50% - 60px)";
+  // lis[(1 + offIndex) % size].style.width = "120px";
+  // lis[(1 + offIndex) % size].style.height = "180px";
 
-    lis[(1 + offIndex) % size].style.left = "calc(50% - 60px)";
-    lis[(1 + offIndex) % size].style.width = "120px";
-    lis[(1 + offIndex) % size].style.height = "180px";
-
-    lis[(2 + offIndex) % size].style.left = "calc(100% - 100px)";
-    lis[(2 + offIndex) % size].style.width = "100px";
-    lis[(2 + offIndex) % size].style.height = "150px";
-  };
+  // lis[(2 + offIndex) % size].className = "card-3th";
+  // lis[(2 + offIndex) % size].style.left = "calc(100% - 100px)";
+  // lis[(2 + offIndex) % size].style.width = "100px";
+  // lis[(2 + offIndex) % size].style.height = "150px";
+  // };
 });
 
 {
